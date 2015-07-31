@@ -13,6 +13,7 @@ import static org.mockito.Matchers.contains;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.never;
 
 public class LibraryTest {
 
@@ -51,7 +52,7 @@ public class LibraryTest {
     public void shouldPrintNothingWhenThereAreNoBooks() {
         Library library = new Library(books, printStream, null);
         library.listBooks();
-        verify(printStream).println();
+        verify(printStream, never()).println();
     }
 
     @Test
